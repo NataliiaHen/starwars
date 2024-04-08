@@ -1,7 +1,25 @@
+import ExploreHeroesLink from '@/app/ui/ExploreLink/explore-link';
+import Image from 'next/image';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Home page</h1>
-    </main>
+    <div>
+      <main className="w-screen">
+        <div className="flex flex-col items-center justify-between">
+          <div className="flex-1">
+            <ExploreHeroesLink />
+          </div>
+          <div>
+            <Image
+              width={1000}
+              height={400}
+              src="/images/heroes-home-img.png"
+              alt="Ilustration of heroes"
+              className="object-cover object-center"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }
