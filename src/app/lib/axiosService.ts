@@ -2,10 +2,8 @@ import axios from 'axios';
 
 const API_URL = 'https://sw-api.starnavi.io/';
 
-axios.defaults.baseURL = API_URL;
-
-const axiosInstance = axios.create({
+const api = axios.create({
   baseURL: API_URL,
 });
 
-export default axiosInstance;
+export default api;

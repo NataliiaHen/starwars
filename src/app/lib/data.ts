@@ -1,22 +1,15 @@
-import axios, { AxiosError } from 'axios';
-import axiosInstance from './axiosService';
 import { HeroesResponce } from '../types/Hero';
+import api from './axiosService';
 
-export const getFromServer = async <T>(url: string): Promise<T> => {
+export const fetchData = async <T>(url: string, config = {}): Promise<T> => {
   try {
-    const response = await axiosInstance.get<T>(url);
+    const response = await api.get(url, config);
     return response.data;
   } catch (error) {
-    const axiosError = error as AxiosError;
-    if (axios.isAxiosError(axiosError) && axiosError.response) {
-      throw new Error(
-        `${axiosError.response.status} ${axiosError.response.statusText}`,
-      );
-    }
-    throw new Error('An unexpected error occurred while fetching data');
+    console.error(`Error fetching data from ${url}:`, error);
+    throw error;
   }
 };
 
-export const fetchHeroes = async (page: string = '1') => {
-  return getFromServer<HeroesResponce>(`/heroes?page=${page}`);
-};
+export const fetchHeroes = (page = 1) =>
+  fetchData<HeroesResponce>(`people/?page=${page}`);
