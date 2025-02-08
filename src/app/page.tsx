@@ -1,4 +1,4 @@
-import ExploreHeroesLink from '@/app/ui/ExploreLink/explore-link';
+import ExploreHeroesLink from '@/app/ui/ExploreLink/ExploreLink';
 import Image from 'next/image';
 
 export default function Home() {

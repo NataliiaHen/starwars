@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { fetchHeroes } from '../lib/data';
-import HeroesList from '../ui/HeroesList/heroes-list';
-import Pagination from '../ui/Pagination/pagination';
+import { fetchHeroes } from '../../api/data';
+import HeroesList from '../ui/HeroesList/HeroesList';
+import { Pagination } from '../ui/Pagination/Pagination';
 
 export const metadata: Metadata = {
   title: 'Heroes',
@@ -16,7 +16,7 @@ const HeroesPage = async ({
 }) => {
   const page = Number(searchParams?.page) || 1;
   const heroesData = await fetchHeroes(page);
-  const { count, results: heroes } = heroesData;
+  const { count = 0, results: heroes } = heroesData;
   const totalPages = Math.ceil(count / 10);
 
   return (

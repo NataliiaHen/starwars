@@ -9,7 +9,7 @@ import { generatePagination, getSearchWith } from '../../lib/utils';
 const basePaginationClass =
   'flex h-10 w-10 items-center justify-center rounded-md border text-sm ease-in duration-300';
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
+export const Pagination = ({ totalPages }: { totalPages: number }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get('page')) || 1;
@@ -59,9 +59,9 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
       </div>
     </div>
   );
-}
+};
 
-function PaginationNumber({
+const PaginationNumber = ({
   page,
   href,
   isActive,
@@ -69,7 +69,7 @@ function PaginationNumber({
   page: number | string;
   href: string;
   isActive: boolean;
-}) {
+}) => {
   const className = clsx(basePaginationClass, {
     'z-10 bg-gray-100 border-gray-300 text-black': isActive,
     'hover:bg-gray-300 hover:text-black bg-black': !isActive,
@@ -82,9 +82,9 @@ function PaginationNumber({
       {page}
     </Link>
   );
-}
+};
 
-function PaginationArrow({
+const PaginationArrow = ({
   href,
   direction,
   isDisabled,
@@ -92,7 +92,7 @@ function PaginationArrow({
   href: string;
   direction: 'left' | 'right';
   isDisabled?: boolean;
-}) {
+}) => {
   const ariaLabel =
     direction === 'left' ? 'Go to previous page' : 'Go to next page';
 
@@ -115,4 +115,4 @@ function PaginationArrow({
       )}
     </Link>
   );
-}
+};
