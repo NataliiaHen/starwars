@@ -20,7 +20,7 @@
 5. **HTML5**: Used for structuring the content of the landing page.
 6. **Tailwindcss**: Styling to enhance the visual aesthetics.
 7. **JavaScript**: Implemented for interactive elements and dynamic features.
-8. **GitHub Pages**: Hosted on GitHub Pages for easy access and sharing.
+8. **Vercel**: Hosted on Vercel for easy access and sharing..
 
 ### The page adapt to the following screens:
 - Desktop
