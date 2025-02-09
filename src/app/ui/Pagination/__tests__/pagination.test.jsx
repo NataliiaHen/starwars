@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import * as NextNavigation from 'next/navigation';
-import { Pagination } from '../Pagination';
+import Pagination from '../pagination';
 
 export const usePathname = jest.fn();
 export const useSearchParams = jest.fn();

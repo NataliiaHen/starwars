@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { fetchHeroes } from '../../api/data';
 import HeroesList from '../ui/HeroesList/HeroesList';
-import Pagination from '../ui/Pagination/Pagination';
+import Pagination from '../ui/Pagination/pagination';
 
 export const metadata: Metadata = {
   title: 'Heroes',
